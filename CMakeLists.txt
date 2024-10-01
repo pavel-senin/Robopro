@@ -18,6 +18,8 @@ set(PROJECT_SOURCES
         mainwindow.cpp
         mainwindow.h
         mainwindow.ui
+        dh_model.h
+        dh_model.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -61,6 +63,7 @@ set_target_properties(Robopro PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/Eigen)
 include(GNUInstallDirs)
 install(TARGETS Robopro
     BUNDLE DESTINATION .
